@@ -210,6 +210,7 @@ void MeGlWindow::paintGL()
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 	glViewport(0, 0, width(), height());
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	glm::vec3 lightPositionWorld = theModel->lightPosition;
 	
@@ -463,6 +464,9 @@ MeGlWindow::~MeGlWindow()
 	glUseProgram(0);
 	glDeleteProgram(programID);
 	glDeleteProgram(passThroughProgramID);
+=======
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+>>>>>>> parent of 753d14b... Video 6 done. OpenGL Two Triangles. Adds vert data for two triangles and draws them.
 =======
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 >>>>>>> parent of 753d14b... Video 6 done. OpenGL Two Triangles. Adds vert data for two triangles and draws them.
