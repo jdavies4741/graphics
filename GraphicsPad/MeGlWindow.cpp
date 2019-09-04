@@ -51,6 +51,7 @@ MeGlWindow::MeGlWindow(MyModel* theModel) :
 	theModel(theModel)
 {
 
+<<<<<<< HEAD
 }
 
 void MeGlWindow::sendDataToOpenGL()
@@ -162,6 +163,19 @@ void MeGlWindow::sendDataToOpenGL()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, theBufferID);
 
 	glBindVertexArray(sphereVertexArrayObjectID);
+=======
+	GLfloat verts[] =
+	{
+		+0.0f, +1.0f,
+		-1.0f, -1.0f,
+		+1.0f, -1.0f,
+	};
+	GLuint myBufferID;
+	glGenBuffers(1, &myBufferID);
+	glBindBuffer(GL_ARRAY_BUFFER, myBufferID);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(verts),
+		verts, GL_STATIC_DRAW);
+>>>>>>> parent of 753d14b... Video 6 done. OpenGL Two Triangles. Adds vert data for two triangles and draws them.
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
 	glEnableVertexAttribArray(2);
@@ -195,6 +209,7 @@ void MeGlWindow::paintGL()
 {
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 	glViewport(0, 0, width(), height());
+<<<<<<< HEAD
 
 	glm::vec3 lightPositionWorld = theModel->lightPosition;
 	
@@ -448,4 +463,7 @@ MeGlWindow::~MeGlWindow()
 	glUseProgram(0);
 	glDeleteProgram(programID);
 	glDeleteProgram(passThroughProgramID);
+=======
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+>>>>>>> parent of 753d14b... Video 6 done. OpenGL Two Triangles. Adds vert data for two triangles and draws them.
 }
